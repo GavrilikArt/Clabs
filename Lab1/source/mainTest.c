@@ -9,7 +9,6 @@ void test_sum() {
   assert(solve(1371) == 6);
   assert(solve(2619) == 2);
   assert(solve(1368) == 5);
-  assert(solve(179) == 5);
   assert(solve(1391) == 6);
   assert(solve(1986) == 1);
   assert(solve(2305) == 8);
