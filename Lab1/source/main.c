@@ -10,7 +10,7 @@ int solve(int k) {
   } else if (k % 3 == 2) {
     return actualNum / 10 % 10;
   } else {
-    return actualNum % 10 + 1;
+    return actualNum % 10;
   }
 }
 
