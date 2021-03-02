@@ -11,7 +11,7 @@ const double profitEU = (3.175 - 3.115) * 100 * 0.83;
 const double buyRUB = 0.0352;
 const double sellRUB = 0.0354;
 const double profitRUB = (0.0354 - 0.0352) * 73.88 * 100;
-const double profitArr[3] = {profitEU, profitRUB, profitUS};
+double profitArr[3] = {profitEU, profitRUB, profitUS};
 
 int main() {
   inputInBYN();
