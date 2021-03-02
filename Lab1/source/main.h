@@ -7,4 +7,4 @@
 
 int solve(int k);
 
-#endif //UNTITLED_MAIN_H
+#endif //LAB1_MAIN_H

@@ -5,7 +5,7 @@
 #include "main.h"
 #include <assert.h>
 
-void test_sum() {
+void test() {
   assert(solve(1371) == 6);
   assert(solve(2619) == 2);
   assert(solve(1368) == 5);
@@ -107,6 +107,6 @@ void test_sum() {
 
 #undef main
 int main() {
-  test_sum();
+  test();
 }
 
