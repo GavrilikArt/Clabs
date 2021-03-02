@@ -6,4 +6,5 @@
 #define LAB2_TASK2_6_MAIN_H
 
 double factorial(char a);
+double safeDoubleInput();
 #endif //LAB2_TASK2_6_MAIN_H

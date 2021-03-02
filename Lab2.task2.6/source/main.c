@@ -7,12 +7,12 @@
 int main() {
   printf("Input x:\n");
   double x;
-  scanf("%lf", &x);
+  x = safeDoubleInput();
   double sinX = sin(x);
 
   printf("Input epsilon please\n");
   double eps;
-  scanf("%lf", &eps);
+  eps = safeDoubleInput();
 
   int N = 0;
 
@@ -48,4 +48,19 @@ double factorial(char a) {
     res *= i;
   }
   return res;
+}
+
+double safeDoubleInput() {
+  double val;
+  int safeInput = 0;
+  while (!safeInput) {
+    if (scanf("%lf", &val) == 1) {
+      safeInput = 1;
+    } else {
+      while (getchar() != '\n') {
+        printf("Bad input, try again\n");
+      }
+    }
+  }
+  return val;
 }

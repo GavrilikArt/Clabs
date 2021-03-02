@@ -1,5 +1,8 @@
 all: clean buildMain buildTest runTest
 
+CC=gcc
+CFLAGS=-Wall -pedantic -std=c90
+
 buildMain:
 	mkdir -p target/main
 	gcc -o target/main/tailor source/main.c

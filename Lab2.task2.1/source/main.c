@@ -22,7 +22,7 @@ int main() {
 void inputInBYN() {
   printf("%s", "\n\n\n\n\n\n\n");
   printf("%s", "Input the sum in BYN: \n");
-  scanf("%lf", &sumInBYN);
+  sumInBYN = safeDoubleInput();
   printf("%s", "\n\n\n\n\n\n\n\n\n\n\n");
   mainMenu();
 }
@@ -31,7 +31,7 @@ void mainMenu() {
   printf("%s", "\n\n\n\n\n\n\n");
   printf("%s", "Choose What you want to do next:\n1. Convert to a different currency\n2. Print currency chart\n3. Get profit per 100$ for every exchange\n4. Short information about the bank\n5. Input New sum in BYN\n6. exit\n");
   int choice;
-  scanf("%d", &choice);
+  choice = safeIntInput();
   switch (choice) {
     case 1:
       convertInto();
@@ -59,9 +59,10 @@ void mainMenu() {
 }
 
 void convertInto() {
+  printf("\n\n\n\n\n\n\n\n\n\n\n");
   printf("%s", "Choose the currency:\n1. US\n2. EU\n3. RUB\n");
   int choice;
-  scanf("%d", &choice);
+  choice = safeIntInput();
   switch (choice) {
     case 1:
       printf("\nConverted to US: %.2lf\n", sumInBYN/sellUS);
@@ -73,7 +74,7 @@ void convertInto() {
       printf("\nConverted to RUB: %.2lf\n", sumInBYN/sellRUB);
       break;
     default:
-      convertInto();
+      break;
   }
   backToMainMenu();
 }
@@ -81,7 +82,6 @@ void convertInto() {
 void printTable() {
   printf("%s", "\n\n\n\n\n\n\n\n\n\n\n");
   printf("US buy: %.2lf, US sell: %.2lf\nEU buy: %.2lf, EU sell: %.2lf\nRUB buy: %.2lf, RUB sell: %.2lf\n", buyUS, sellUS, buyEU, sellEU, buyRUB, sellRUB);
-  printf("Back to main menu?\n1: Yeah\n2: No\n");
   backToMainMenu();
 }
 
@@ -124,7 +124,7 @@ void backToMainMenu() {
   printf("\n\n");
   printf("Back to main menu?\n1: Yeah\n2: No\n");
   int choice1;
-  scanf("%d", &choice1);
+  choice1 = safeIntInput();
   switch (choice1) {
     case 1:
       mainMenu();
@@ -138,6 +138,33 @@ void backToMainMenu() {
 
 double someKindOfTest(double k) {
   return buyUS * k;
+}
+
+double safeDoubleInput() {
+  double val;
+  char ch;
+
+  while (scanf("%lf%c", &val, &ch) != 2 || ch != '\n') {
+    printf("Wrong input\nTry again\n");
+    while (getchar() != '\n') {}
+  }
+
+  return val;
+}
+
+int safeIntInput() {
+  int val;
+  int safeInput = 0;
+  while (!safeInput) {
+    if (scanf("%d", &val) == 1) {
+      safeInput = 1;
+    } else {
+      while (getchar() != '\n') {
+        printf("Bad input, try again\n");
+      }
+    }
+  }
+  return val;
 }
 
 

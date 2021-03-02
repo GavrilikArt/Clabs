@@ -5,6 +5,8 @@
 #ifndef LAB_2_MAIN_H
 #define LAB_2_MAIN_H
 
+double safeDoubleInput();
+int safeIntInput();
 double sumInBYN;
 void inputInBYN();
 void mainMenu();
