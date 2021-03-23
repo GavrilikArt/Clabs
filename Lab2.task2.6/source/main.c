@@ -5,12 +5,12 @@
 #define IAmStillAlive 1
 
 int main() {
-  printf("Input x:\n");
+  printf("\n\n\nInput x:\n");
   double x;
   x = safeDoubleInput();
   double sinX = sin(x);
 
-  printf("Input epsilon please\n");
+  printf("Input epsilon please, precision is 10^(-13)\n");
   double eps;
   eps = safeDoubleInput();
 

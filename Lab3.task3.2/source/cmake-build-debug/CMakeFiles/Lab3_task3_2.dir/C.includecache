@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/apple/Clabs/Lab3.task3.2/source/main.c
+main.h
+/Users/apple/Clabs/Lab3.task3.2/source/main.h
+stdio.h
+-
+
+/Users/apple/Clabs/Lab3.task3.2/source/main.h
+
