@@ -5,8 +5,8 @@
 #include <assert.h>
 
 void test() {
-  assert(containsRepeatedChars("hh" == true));
-  assert(containsRepeatedChars("hello" == true));
+  assert(containsRepeatedChars("hh") == true);
+  assert(containsRepeatedChars("hello") == true);
 }
 
 #undef main
