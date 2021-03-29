@@ -7,6 +7,8 @@
 void test() {
   assert(containsRepeatedChars("hh") == true);
   assert(containsRepeatedChars("hello") == true);
+  assert(containsRepeatedChars("aufoaufoa") == true);
+  assert(containsRepeatedChars("NoRep") == false);
 }
 
 #undef main
