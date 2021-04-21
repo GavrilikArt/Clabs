@@ -167,8 +167,10 @@ bool less_or_equal(vector<int> first_number, vector<int> second_number) {
 vector<int> LongDivLong(vector<int> first_number, vector<int> second_number) {
   vector<int> current;
   string answer;
+
   for (int i = first_number.size() - 1; i >= 0; i--) {
     current.insert(current.begin(), first_number[i]);
+    remove_leading_zeros(current);
     int l = 0, r = 10;
     while (r - l > 1) {
       int mid = (l + r) / 2;
