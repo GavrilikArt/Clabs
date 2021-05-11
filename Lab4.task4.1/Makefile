@@ -1,4 +1,4 @@
-all: clean buildMain buildTest runTest
+	all: clean buildMain buildTest runTest
 
 CC=gcc
 CFLAGS=-Wall -pedantic -std=c90

@@ -7,7 +7,6 @@ buildMain:
 buildTest:
 	mkdir -p target/test
 	g++ -o target/test/LongNumTest -Dmain=_main source/main.cpp source/mainTest.cpp -lm
-
 runTest:
 	./target/test/LongNumTest
 

@@ -192,7 +192,8 @@ vector<int> LongDivLong(vector<int> first_number, vector<int> second_number) {
   return result;
 }
 
-int main() {
+
+int main(int argc, char** argv) {
   std::string a, b;
   std::cin >> a >> b;
   vector<int> va = convert(a);
@@ -216,5 +217,6 @@ int main() {
   for (auto i : vec1) {
     std::cout << i;
   }
+
   return 0;
 }
