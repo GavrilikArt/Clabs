@@ -67,9 +67,12 @@ void test() {
     student->getFined();
     student->getFined();
     student->getFined();
+    d->kickStudent("a", "a", "a");
+    d->kickStudent("aafljalf", "alfaljfaf", "lll1ja");
 }
 
 #undef main
 int main() {
     test();
+    return 0;
 }
