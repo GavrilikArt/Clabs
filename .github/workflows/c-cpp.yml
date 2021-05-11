@@ -12,15 +12,21 @@ jobs:
     runs-on: macOs-latest
 
     steps:
+    - name: Fetch
+      uses: actions/checkout@master
     - uses: actions/checkout@v2
     - name: test and compile
       run: |
-        for d in */; do
+        for d in */ ; do
         cd "$d"
         make
         cd ..
         done
-      
+    - name: Upload
+      uses: codecov/codecov-action@v1
+      with:
+        files: |
+          ./lab7.task6.2/Dormitory.cpp.gcov
       
       
       
