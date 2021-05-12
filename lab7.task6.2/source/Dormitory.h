@@ -74,8 +74,8 @@ public:
     void addStudentToAll(const std::shared_ptr<Student>& student);
     void giveRoomToStudent(const std::shared_ptr<Student>& student);
     void chooseFaculty() const;
-    std::shared_ptr<Student> getStudent(std::string name, std::string surname, std::string thirdName) const;
-    void getInfoAboutStudent(std::string name, std::string surname, std::string thirdName) const;
+    std::shared_ptr<Student> getStudent(std::string name, std::string surname, std::string thirdName);
+    void getInfoAboutStudent(std::string name, std::string surname, std::string thirdName);
     void printAllInfo() const;
 private:
     std::unordered_map<size_t, std::shared_ptr<Student> > allStudents;

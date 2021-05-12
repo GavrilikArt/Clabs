@@ -26,7 +26,7 @@ void Dormitory::giveRoomToStudent(const std::shared_ptr<Student>& student) {
     addStudentToAll(student);
 }
 
-void Dormitory::getInfoAboutStudent(std::string name, std::string surname, std::string thirdName) const {
+void Dormitory::getInfoAboutStudent(std::string name, std::string surname, std::string thirdName) {
     std::hash<std::string> hash;
     std::shared_ptr<Student> student = allStudents[hash(name + surname + thirdName)];
     if (student != nullptr) {
@@ -110,7 +110,7 @@ void Dormitory::getStudentFromBlockNumber(int blockNum) const {
     }
 }
 
-std::shared_ptr<Student> Dormitory::getStudent(std::string name, std::string surname, std::string thirdName) const {
+std::shared_ptr<Student> Dormitory::getStudent(std::string name, std::string surname, std::string thirdName) {
     std::hash<std::string> hash;
     std::shared_ptr<Student> student = allStudents[hash(name + surname + thirdName)];
     if (student != nullptr) {
