@@ -25,7 +25,7 @@ public:
     bool getFined();
     std::shared_ptr<Faculty> getFaculty();
     void setBlock(std::shared_ptr<Block> block);
-    void printStudentsInfo();
+    void printStudentsInfo() const;
 private:
     std::string name;
     std::string surname;
@@ -52,9 +52,9 @@ class Faculty {
 public:
     friend class Dormitory;
     Faculty(std::string name);
-    std::string getName();
+    std::string getName() const;
     void settleStudent(const std::shared_ptr<Student>& student);
-    void printFacultyInfo();
+    void printFacultyInfo() const;
     const short int capacity = 25;
 private:
     unsigned short int currentBlock = 0;
@@ -65,18 +65,18 @@ private:
 
 class Dormitory {
 public:
-    int getNumOfFaculties();
-    std::shared_ptr<Faculty> getFacultyByIndex(int index);
+    int getNumOfFaculties() const;
+    std::shared_ptr<Faculty> getFacultyByIndex(int index) const;
     explicit Dormitory(std::string name);
     void kickStudent(std::string name, std::string surname, std::string thirdName);
-    void getStudentFromBlockNumber(int blockNum);
+    void getStudentFromBlockNumber(int blockNum) const;
     void addFaculty(std::shared_ptr<Faculty>& faculty);
     void addStudentToAll(const std::shared_ptr<Student>& student);
     void giveRoomToStudent(const std::shared_ptr<Student>& student);
-    void chooseFaculty();
-    std::shared_ptr<Student> getStudent(std::string name, std::string surname, std::string thirdName);
-    void getInfoAboutStudent(std::string name, std::string surname, std::string thirdName);
-    void printAllInfo();
+    void chooseFaculty() const;
+    std::shared_ptr<Student> getStudent(std::string name, std::string surname, std::string thirdName) const;
+    void getInfoAboutStudent(std::string name, std::string surname, std::string thirdName) const;
+    void printAllInfo() const;
 private:
     std::unordered_map<size_t, std::shared_ptr<Student> > allStudents;
     std::string name;

@@ -26,7 +26,7 @@ void Dormitory::giveRoomToStudent(const std::shared_ptr<Student>& student) {
     addStudentToAll(student);
 }
 
-void Dormitory::getInfoAboutStudent(std::string name, std::string surname, std::string thirdName) {
+void Dormitory::getInfoAboutStudent(std::string name, std::string surname, std::string thirdName) const {
     std::hash<std::string> hash;
     std::shared_ptr<Student> student = allStudents[hash(name + surname + thirdName)];
     if (student != nullptr) {
@@ -36,7 +36,7 @@ void Dormitory::getInfoAboutStudent(std::string name, std::string surname, std::
     }
 }
 
-void Dormitory::chooseFaculty() {
+void Dormitory::chooseFaculty() const {
     if (faculties.empty()) {
         std::cout << "\nNo Faculties Available, first add a faculty!\n";
         return;
@@ -50,7 +50,7 @@ void Dormitory::chooseFaculty() {
     }
 }
 
-void Faculty::printFacultyInfo() {
+void Faculty::printFacultyInfo() const {
     std::cout << "\n______________________\n";
     std::cout << this->name << "\n\n\n";
     for (const auto& block : this->blocks) {
@@ -62,7 +62,7 @@ void Faculty::printFacultyInfo() {
     }
 }
 
-void Dormitory::printAllInfo() {
+void Dormitory::printAllInfo() const {
     for (const auto& faculty : faculties) {
         std::cout << "\n______________________\n";
         std::cout << faculty->name << "\n\n\n";
@@ -94,7 +94,7 @@ void Dormitory::kickStudent(std::string name, std::string surname, std::string t
     }
 }
 
-void Dormitory::getStudentFromBlockNumber(int blockNum) {
+void Dormitory::getStudentFromBlockNumber(int blockNum) const {
     if (blockNum / 100 > faculties.size()) {
         std::cout << "\nThis block doesn't exist\n";
         return;
@@ -110,7 +110,7 @@ void Dormitory::getStudentFromBlockNumber(int blockNum) {
     }
 }
 
-std::shared_ptr<Student> Dormitory::getStudent(std::string name, std::string surname, std::string thirdName) {
+std::shared_ptr<Student> Dormitory::getStudent(std::string name, std::string surname, std::string thirdName) const {
     std::hash<std::string> hash;
     std::shared_ptr<Student> student = allStudents[hash(name + surname + thirdName)];
     if (student != nullptr) {
@@ -120,11 +120,11 @@ std::shared_ptr<Student> Dormitory::getStudent(std::string name, std::string sur
     }
 }
 
-std::shared_ptr<Faculty> Dormitory::getFacultyByIndex(int index) {
+std::shared_ptr<Faculty> Dormitory::getFacultyByIndex(int index) const{
     return faculties[index];
 }
 
-int Dormitory::getNumOfFaculties() {
+int Dormitory::getNumOfFaculties() const {
     return faculties.size();
 }
 
@@ -152,7 +152,7 @@ void Faculty::settleStudent(const std::shared_ptr<Student>& student) {
     student->setBlock(blocks[currentBlock]);
 }
 
-std::string Faculty::getName() {
+std::string Faculty::getName() const {
     return this->name;
 }
 
@@ -179,7 +179,7 @@ void Student::setBlock(std::shared_ptr<Block> block) {
     this->block = block;
 }
 
-void Student::printStudentsInfo() {
+void Student::printStudentsInfo() const {
     std::cout << "\n";
     std::cout << "Student: " << this->name << " " << surname << " " << thirdName << "\n";
     std::cout << "Faculty: " << faculty->getName() << "\n";
